@@ -1,1 +1,1 @@
-web: python manage.py runserver --log-file -
+web: gunicorn newsgraphql.wsgi --log-file -
