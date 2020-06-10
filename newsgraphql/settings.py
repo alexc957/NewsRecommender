@@ -25,6 +25,7 @@ SECRET_KEY = '!eeh6$v=@&+83b+(h)taz#ubv0)3ez!e28eroas^88@*96j%bs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# yeah
 ALLOWED_HOSTS = [
     "tranquil-mountain-27611.herokuapp.com"
 ]
