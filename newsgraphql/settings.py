@@ -26,7 +26,7 @@ SECRET_KEY = '!eeh6$v=@&+83b+(h)taz#ubv0)3ez!e28eroas^88@*96j%bs'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "https://tranquil-mountain-27611.herokuapp.com"
+    "tranquil-mountain-27611.herokuapp.com"
 ]
 
 
