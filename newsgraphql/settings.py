@@ -25,7 +25,9 @@ SECRET_KEY = '!eeh6$v=@&+83b+(h)taz#ubv0)3ez!e28eroas^88@*96j%bs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "https://tranquil-mountain-27611.herokuapp.com"
+]
 
 
 # Application definition
@@ -42,9 +44,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'collector',
     'recommendations',
-  #  'authors',
-  
-  #  'authorArticle',
+    #  'authors',
+
+    #  'authorArticle',
     'django_extensions',
 ]
 
@@ -58,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'graphql_jwt.middleware.JSONWebTokenMiddleware',
-    
+
 
 ]
 
@@ -135,7 +137,7 @@ STATIC_URL = '/static/'
 
 GRAPHENE = {
     'SCHEMA': 'newsgraphql.schema.schema',
-   
+
 }
 
 AUTHENTICATION_BACKENDS = [
