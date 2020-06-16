@@ -5,7 +5,7 @@ from django.utils.timezone import now
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=500)
+    title = models.CharField(max_length=1000)
     summary = models.TextField()
     lang = models.CharField(max_length=2, default='en')
     category = models.CharField(default='news', null=True, max_length=30)
