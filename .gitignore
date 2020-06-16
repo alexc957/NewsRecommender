@@ -2,3 +2,4 @@ __pycache__/
 tesisVen/
 .tesisVen
 Jupyter Notebooks/.ipynb_checkpoints
+.env
