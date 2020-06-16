@@ -1,38 +1,34 @@
 from django.db import models
-from django.conf import settings 
+from django.conf import settings
 # Create your models here.
 from django.utils.timezone import now
 
+
 class Article(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=500)
     summary = models.TextField()
-    lang = models.CharField(max_length=2,default='en')
+    lang = models.CharField(max_length=2, default='en')
     category = models.CharField(default='news', null=True, max_length=30)
-    date_uploaded = models.DateField(default = now())
+    date_uploaded = models.DateField(default=now())
     text_vector = models.TextField()
 
 
-#class Vote(models.Model):
+# class Vote(models.Model):
 #    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
 #    article  = models.ForeignKey('articles.Article', related_name='vote', on_delete = models.CASCADE)
 
 
 class SimilarArticle(models.Model):
-    principal_article = models.ForeignKey(Article,related_name='similar_articles',on_delete=models.CASCADE)
-    related_article = models.ForeignKey(Article,related_name='similar_to',on_delete=models.CASCADE)
+    principal_article = models.ForeignKey(
+        Article, related_name='similar_articles', on_delete=models.CASCADE)
+    related_article = models.ForeignKey(
+        Article, related_name='similar_to', on_delete=models.CASCADE)
     score = models.FloatField(default=0)
 
 
-    
-
-
-#class Author(models.Model):
+# class Author(models.Model):
 #    fullName = models.CharField(max_length=50)
 
-
-
-
-
-#class AuthorArticle(models.Model):
+# class AuthorArticle(models.Model):
 #    author1 = models.ForeignKey(Author, related_name='articles',on_delete=models.CASCADE)
 #    article1 = models.ForeignKey(Article,related_name='authors',on_delete=models.CASCADE)
