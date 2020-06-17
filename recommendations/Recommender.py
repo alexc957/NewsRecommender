@@ -120,7 +120,7 @@ class Recommender:
                 break
         print('done')
 
-    def find_similars_articles(self):
+    def find_similars_articles_in_all_articles(self):
         all_articles = Article.objects.all()
         t0 = time.time()
         length = len(all_articles)
