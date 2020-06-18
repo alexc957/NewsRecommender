@@ -6,9 +6,9 @@ from pprint import pprint
 from newsgraphql.schema import schema
 from collector.models import Vote
 from graphene.test import Client
-import spacy
+
 import datetime
-nlp = spacy.load('es_core_news_md')
+
 client = Client(schema)
 
 
