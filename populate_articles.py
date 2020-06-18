@@ -17,6 +17,7 @@ jsons_path = 'D:/Projects/Spanish news dataset sample/news*'
 
 articles_df = pd.read_csv(csv_path)
 
+
 # saving first the authors
 
 
