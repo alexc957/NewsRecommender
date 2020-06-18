@@ -3,7 +3,7 @@ numpy
 pandas 
 requests
 scikit-learn
-django==2.1.5
+django==2.2.13
 gunicorn
 django-heroku
 graphene-django==2.2.0
