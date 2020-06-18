@@ -104,7 +104,8 @@ WSGI_APPLICATION = 'newsgraphql.wsgi.application'
 # }
 
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(
+    conn_max_age=600, ssl_require=True)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -162,4 +163,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 # This should already be in your settings.py
 django_heroku.settings(locals())
 # This is new
-del DATABASES['default']['OPTIONS']['sslmode']
+#del DATABASES['default']['OPTIONS']['sslmode']
