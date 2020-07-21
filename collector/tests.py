@@ -80,5 +80,39 @@ class QueryVoteTestCase(TestCase):
             }
         },executed)
 
+    def test_create_vote(self):
+        context = Context(user=self.user)
+        executed = client.execute('''
+        mutation {
+            createVote(articleId: 2) {
+                user {
+                    username
+                }
+                article {
+                    id
+                }
+            }
+        }
+        ''', context=context)
+        expected = {
+            "data": {
+                "createVote": {
+                    "user": {
+                        "username": "user"
+                    },
+                    "article": {
+                        "id": 2
+                    }
+                }
+            }
+        }
+
+        self.assertDictEqual(expected, executed)
+        
+        
+
+
+
+
 
 
