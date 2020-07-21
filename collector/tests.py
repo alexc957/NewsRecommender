@@ -101,7 +101,7 @@ class QueryVoteTestCase(TestCase):
                         "username": "user"
                     },
                     "article": {
-                        "id": 2
+                        "id": '2'
                     }
                 }
             }
