@@ -107,8 +107,8 @@ class QueryVoteTestCase(TestCase):
             }
         }
 
-        self.assertDictEqual(expected, executed)
-        
+        self.assertDictEqual(expected.get('data'), dic(executed.get('data')))
+
         
 
 
