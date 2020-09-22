@@ -60,35 +60,35 @@ class Query(graphene.ObjectType):
 
 
 
-class GenerateRecommendations(graphene.Mutation):
-    recommendations = graphene.List(RecommendationType)
+#class GenerateRecommendations(graphene.Mutation):
+ #   recommendations = graphene.List(RecommendationType)
 
 
-    def mutate(self,info):
+  #  def mutate(self,info):
 
-        user = info.context.user
-        if not user.is_authenticated:
-            raise Exception("You must be logged to receive recommendations")
-        recommender.generate_recommendations(user) # call the recommender
+   #     user = info.context.user
+    #    if not user.is_authenticated:
+     #       raise Exception("You must be logged to receive recommendations")
+      #  recommender.generate_recommendations(user) # call the recommender
 
-        return Recommendation.objects.all()[-10:]
+       # return Recommendation.objects.all()[-10:]
 
-class FindSimilarArticles(graphene.Mutation):
-    similar_articles = graphene.List(SimilarArticleType)
+#class FindSimilarArticles(graphene.Mutation):
+ #   similar_articles = graphene.List(SimilarArticleType)
 
-    class Arguments:
-        article_id = graphene.Int()
+  #  class Arguments:
+   #     article_id = graphene.Int()
 
-    def mutate(self,info,article_id):
-        article = Article.objects.filter(id = article_id).first()
-        if not article:
-            raise Exception("Bad Id provided")
-        recommender.generate_recommendations_based_on_one_article(article)
+    #def mutate(self,info,article_id):
+     #   article = Article.objects.filter(id = article_id).first()
+      #  if not article:
+       #     raise Exception("Bad Id provided")
+        #recommender.generate_recommendations_based_on_one_article(article)
 
-        return Recommendation.objects.filter(user = user,recommended=False).order_by('-score')[:10]
+        #return Recommendation.objects.filter(user = user,recommended=False).order_by('-score')[:10]
         
 
-class Mutation(graphene.ObjectType):
-    generate_recommendations = GenerateRecommendations.Field()
-    find_similar_articles = FindSimilarArticles.Field()
+#class Mutation(graphene.ObjectType):
+ #   generate_recommendations = GenerateRecommendations.Field()
+  #  find_similar_articles = FindSimilarArticles.Field()
     
