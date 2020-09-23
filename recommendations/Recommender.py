@@ -26,8 +26,7 @@ class Recommender:
     def cosine_similarity_score(self, x, y):
         y = np.array(y.split(';')).astype(float)
         x = np.array(x.split(';')).astype(float)
-        # print(y.shape)
-        # print(x.shape)
+
         try:
 
             similarity_score = cosine_similarity([x], [y])
@@ -47,8 +46,7 @@ class Recommender:
                 liked_article.text_vector,
                 article.text_vector
             )
-            #print('similarity', similarity)
-            #print('sim type', type(similarity))
+
 
             if similarity > self.threshold:
                 top_ten_similar_article.append((article, similarity))
@@ -57,19 +55,7 @@ class Recommender:
 
             if num_articles_with_score_above_trehshold > 10:
                 break
-        # if not top_ten_similar_article:
-        #    return None
-        # most_revelant_article = sorted(
-         #   article_score_pair, key= lambda x: x[1], reverse=True
-        # )[0]
-
-        # print(most_revelant_article[0])
-        #article = Article.objects.filter(id = most_revelant_article[0]).first()
         return top_ten_similar_article
-        # return (article, most_revelant_article[1])
-
-        # if len(article_score_pair)==0:
-        #    return None
 
     def generate_recommendations(self, user):
         """
