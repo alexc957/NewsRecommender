@@ -1,0 +1,15 @@
+[run]
+omit = articles/views.py 
+       collector/views.py   
+       newsgraphql/populate_db.py 
+       newsgraphql/urls.py 
+       newsgraphql/wsgi.py 
+       populate_articles.py  
+       recommendations/views.py 
+       todelete.py  
+       users/admin.py 
+       users/models.py 
+       users/views.py
+       articles/populate_db.py 
+       */migrations/* 
+       */apps.py 
